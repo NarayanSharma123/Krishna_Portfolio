@@ -11,7 +11,12 @@ export default function KrishnaPortfolio() {
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
       <nav className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-700">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex items-center gap-3"
+          >
             <img
               src={PROFILE_IMG}
               alt="KK"
@@ -21,9 +26,14 @@ export default function KrishnaPortfolio() {
               <h1 className="text-sm font-bold">Krishna Kumar</h1>
               <p className="text-xs text-slate-400">Architectural Drafter</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="hidden md:flex items-center gap-6 text-sm">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+            className="hidden md:flex items-center gap-6 text-sm"
+          >
             <a href="#about" className="hover:text-teal-400">
               About
             </a>
@@ -52,7 +62,7 @@ export default function KrishnaPortfolio() {
             >
               Download CV
             </a>
-          </div>
+          </motion.div>
 
           <div className="md:hidden">
             <button
